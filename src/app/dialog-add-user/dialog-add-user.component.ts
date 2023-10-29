@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
+import { FirebaseService } from '../firebase.service';
+
+
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -11,8 +14,13 @@ export class DialogAddUserComponent {
   birthDate!: Date;
 
 
+  constructor(private firebase: FirebaseService){
+
+  }
+
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
     console.log('user', this.user);
+    this.firebase.addUser(this.user.toJSON());
   }
 }

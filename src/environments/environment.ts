@@ -6,5 +6,5 @@ export const environment = {
         storageBucket: "simple-crm-20379.appspot.com",
         messagingSenderId: "500497332525",
         appId: "1:500497332525:web:02ad44edcae731c5aebba4"
-    }
+    },
 };

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
-import { FirebaseService } from '../firebase.service';
 import { MatDialogRef } from '@angular/material/dialog';
-
+import { Firestore, collection, doc, addDoc, onSnapshot } from '@angular/fire/firestore';
 
 
 @Component({
@@ -15,17 +14,29 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   loading: boolean = false;
 
-  constructor(private firebase: FirebaseService, public dialogRef: MatDialogRef<DialogAddUserComponent>) {
-  }
+  
+  constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
+
 
   saveUser() {
     this.loading = true;
     this.user.birthDate = this.birthDate.getTime();
-    console.log('user', this.user);
-    this.firebase.addUser(this.user.toJSON()).then((result: any) => {
-      this.loading = false;
-      console.log('Adding was finished', result);
-      this.dialogRef.close()
-    })
+    this.addUser();
+    this.dialogRef.close();
   }
+
+
+  async addUser() {
+    await addDoc(this.getUserReference('users'), this.user.toJSON()).catch(
+      (err) => {
+        console.log(err);
+      }
+    )
+  }
+
+
+  getUserReference(colId: string) {
+    return collection(this.firebase, colId);
+  }
+
 }

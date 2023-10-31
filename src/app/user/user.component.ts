@@ -21,7 +21,9 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.unsubUsers = onSnapshot(this.getUserReference('users'), (list) => {
       list.forEach((element) => {
-        this.users.push(element.data())
+        const userData = element.data();
+        userData['id'] = element.id;
+        this.users.push(userData)
       });
     });
   }

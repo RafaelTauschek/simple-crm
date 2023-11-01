@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
+import { Firestore, doc, collection, updateDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-dialog-edit-address',
@@ -10,8 +11,9 @@ import { User } from 'src/models/user.class';
 export class DialogEditAddressComponent implements OnInit {
   user!: User;
   loading: boolean = false;
+  userId: string = '';
 
-  constructor(public dialogRef: MatDialogRef<DialogEditAddressComponent>) {
+  constructor(public dialogRef: MatDialogRef<DialogEditAddressComponent>, private firebase: Firestore) {
 
   }
 
@@ -21,6 +23,20 @@ export class DialogEditAddressComponent implements OnInit {
   }
 
   saveUser() {
+    this.loading = true;  
+    this.updateUser().then(() => {
+      this.loading = false;
+      this.dialogRef.close();
+    });
+  }
 
+
+  async updateUser() {
+    updateDoc(this.getUserReference(), this.user.toJSON());
+  }
+
+
+  getUserReference() {
+    return doc(collection(this.firebase, 'users'), this.userId)
   }
 }

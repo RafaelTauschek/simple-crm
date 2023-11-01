@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Firestore, doc, collection, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
@@ -10,14 +11,29 @@ import { User } from 'src/models/user.class';
 export class DialogEditUserComponent implements OnInit {
   user!: User;
   loading: boolean = false;
+  birthDate!: Date;
+  userId: string = '';
 
-  constructor(public dialogRef: MatDialogRef<DialogEditUserComponent> ) {}
+  constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent> ) {}
 
   ngOnInit(): void {
-    
   }
 
   saveUser() {
-    
+    this.loading = true;
+    this.updateUser().then(() => {
+      this.loading = false;
+      console.log(this.user);
+      this.dialogRef.close();
+    });
+  }
+
+  async updateUser() {
+    updateDoc(this.getUserReference(), this.user.toJSON());
+  }
+
+
+  getUserReference() {
+    return doc(collection(this.firebase, 'users'), this.userId)
   }
 }

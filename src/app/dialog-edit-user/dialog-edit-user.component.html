@@ -2,7 +2,7 @@
     <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     <h1 mat-dialog-title>Add User</h1>
     <div mat-dialog-content>
-        
+
       <div class="pad-t8">
         <mat-form-field appearance="outline" class="mr-16">
           <mat-label>First name</mat-label>
@@ -19,6 +19,15 @@
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>E-Mail</mat-label>
           <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="E-Mail">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Birth date</mat-label>
+          <input [disabled]="loading" matInput [(ngModel)]="user.birthDate" matInput [matDatepicker]="dp" placeholder="Birth date">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
         </mat-form-field>
       </div>
   

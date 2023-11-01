@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Firestore, collection, doc, addDoc, onSnapshot } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 
 
 @Component({
@@ -14,7 +14,6 @@ export class DialogAddUserComponent {
   birthDate!: Date;
   loading: boolean = false;
 
-  
   constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogAddUserComponent>) {}
 
 

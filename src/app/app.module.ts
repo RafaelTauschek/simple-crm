@@ -26,7 +26,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
-
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
+import { SignInComponent } from './login/sign-in/sign-in.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { VertifyEmailComponent } from './login/vertify-email/vertify-email.component';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,11 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     DialogAddUserComponent,
     UserDetailComponent,
     DialogEditAddressComponent,
-    DialogEditUserComponent
+    DialogEditUserComponent,
+    ForgotPasswordComponent,
+    SignInComponent,
+    SignUpComponent,
+    VertifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +63,8 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     MatMenuModule,
     MatCardModule,
     FormsModule,
+    AngularFireAuthModule,
+    FirestoreModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],

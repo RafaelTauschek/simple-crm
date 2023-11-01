@@ -17,10 +17,16 @@ export class DialogEditUserComponent implements OnInit {
   constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent> ) {}
 
   ngOnInit(): void {
+console.log(this.user.birthDate);
+
+    
+    
+    
   }
 
   saveUser() {
     this.loading = true;
+    this.user.birthDate = this.birthDate.getTime();
     this.updateUser().then(() => {
       this.loading = false;
       console.log(this.user);

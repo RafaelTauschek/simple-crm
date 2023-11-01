@@ -21,15 +21,6 @@
           <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="E-Mail">
         </mat-form-field>
       </div>
-
-      <div>
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Birth date</mat-label>
-          <input [disabled]="loading" matInput [(ngModel)]="user.birthDate" matInput [matDatepicker]="dp" placeholder="Birth date">
-          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-          <mat-datepicker #dp></mat-datepicker>
-        </mat-form-field>
-      </div>
   
     </div>
     <div mat-dialog-actions>

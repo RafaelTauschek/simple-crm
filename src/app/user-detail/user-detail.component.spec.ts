@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserDetailComponent } from './user-detail.component';
-import { ActivatedRoute } from '@angular/router';
-import { MatDialogModule } from '@angular/material/dialog';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
@@ -9,9 +10,13 @@ describe('UserDetailComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatDialogModule],
+      imports: [MatDialogModule, RouterModule, RouterTestingModule],
       declarations: [UserDetailComponent],
-      providers: [ActivatedRoute]
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        }]
     });
     fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;

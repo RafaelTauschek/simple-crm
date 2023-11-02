@@ -31,6 +31,10 @@ import { SignInComponent } from './login/sign-in/sign-in.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { VertifyEmailComponent } from './login/vertify-email/vertify-email.component';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AuthService } from './auth.service';
+import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
     ForgotPasswordComponent,
     SignInComponent,
     SignUpComponent,
-    VertifyEmailComponent
+    VertifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,12 +67,15 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
     MatMenuModule,
     MatCardModule,
     FormsModule,
-    AngularFireAuthModule,
+    AngularFireModule,
     FirestoreModule,
+    AngularFireAuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [
+    {provide: FIREBASE_OPTIONS, useValue: environment.firebase}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,22 @@
-<p>sign-in works!</p>
+<div class="login-container">
+    <mat-card class="login-card">
+
+        <mat-form-field>
+            <mat-label>Email address</mat-label>
+            <input [(ngModel)]="user.email" matInput placeholder="Email address" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password*</mat-label>
+            <input [(ngModel)]="user.password" placeholder="Password" matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <a routerLink="/password-recovery" routerLinkActive="true">Forgot Password?</a>
+        <button (click)="login()" mat-button>Login</button>
+        <button (click)="guestLogin()" mat-button>Guest Login</button>
+        <span>Don't have an account? <a routerLink="" routerLink="/register" routerLinkActive="true">Register</a></span>
+    </mat-card>
+</div>

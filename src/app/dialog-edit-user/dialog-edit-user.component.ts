@@ -14,14 +14,9 @@ export class DialogEditUserComponent implements OnInit {
   birthDate!: Date;
   userId: string = '';
 
-  constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent> ) {}
+  constructor(private firebase: Firestore, public dialogRef: MatDialogRef<DialogEditUserComponent>) { }
 
   ngOnInit(): void {
-console.log(this.user.birthDate);
-
-    
-    
-    
   }
 
   saveUser() {

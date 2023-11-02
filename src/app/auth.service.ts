@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 
 
@@ -7,26 +8,22 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root'
 })
 export class AuthService {
-  user = {
-    email: '',
-    password: ''
-  }
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
-
-  signIn() {
-    this.afAuth.signInWithEmailAndPassword(this.user.password, this.user.email).then((userCredential) => {
-      //Signed in
+  signIn(password:string, email:string) {
+    this.afAuth.signInWithEmailAndPassword(password, email).then((userCredential) => {
       const user = userCredential.user;
+    }).then(() => {
+      this.router.navigate(['/dashboard'])
     }).catch((err) => {
       const errorCode = err.code;
       const errorMessage = err.message;
     });
   }
 
-  signUp() {
-    this.afAuth.createUserWithEmailAndPassword(this.user.password, this.user.email).then((userCredential) => {
+  signUp(password:string, email:string) {
+    this.afAuth.createUserWithEmailAndPassword(password, email).then((userCredential) => {
       // Signed up
       const user = userCredential.user;
     }).catch((err) => {

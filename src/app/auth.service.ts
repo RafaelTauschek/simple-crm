@@ -34,7 +34,7 @@ export class AuthService {
 
   signOut() {
     this.afAuth.signOut().then(() => {
-      //Sign out successful
+      this.router.navigate([''])
     }).catch((err) => {
       // An error happend
     })

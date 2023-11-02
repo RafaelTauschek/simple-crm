@@ -26,6 +26,17 @@ mat-toolbar {
     height: 56px;
 }
 
+mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+
+    .toolbar-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
 .menu-items {
     list-style-type: none;
     padding-left: 0;

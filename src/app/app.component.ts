@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private auth: AuthService) { }
+
+  logout() {
+    this.auth.signOut()
+  }
 }

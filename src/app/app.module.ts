@@ -33,6 +33,9 @@ import { VertifyEmailComponent } from './login/vertify-email/vertify-email.compo
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './auth.service';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { HomeComponent } from './home/home.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,6 +51,7 @@ import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
     SignInComponent,
     SignUpComponent,
     VertifyEmailComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +76,8 @@ import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
     AngularFireAuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    GraphQLModule,
+    HttpClientModule,
   ],
   providers: [
     {provide: FIREBASE_OPTIONS, useValue: environment.firebase}

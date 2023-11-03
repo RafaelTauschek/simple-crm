@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+
 
 
 @Component({
@@ -15,7 +15,7 @@ export class SignInComponent {
     password: ''
   }
 
-  constructor(private auth: AuthService, private router: ActivatedRoute) {}
+  constructor(private auth: AuthService) {}
 
 
   login() {

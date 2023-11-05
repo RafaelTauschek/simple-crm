@@ -21,14 +21,19 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@apollo/client": "^3.0.0",
+    "@canvasjs/angular-charts": "^1.0.3",
     "apollo-angular": "^5.0.2",
+    "chart.js": "^4.4.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "firebaseui": "^6.1.0",
+    "graphql": "^16",
+    "highcharts-angular": "^3.1.2",
+    "ng2-charts": "^5.0.3",
     "rxfire": "^6.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.13.0",
-    "@apollo/client": "^3.0.0",
-    "graphql": "^16"
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.2.2",

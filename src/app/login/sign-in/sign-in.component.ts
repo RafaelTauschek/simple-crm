@@ -20,6 +20,7 @@ export class SignInComponent {
 
   login() {
     this.auth.signIn(this.user.email, this.user.password);
+
   }
 
   guestLogin() {

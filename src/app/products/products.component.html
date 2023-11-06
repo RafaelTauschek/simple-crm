@@ -1,1 +1,17 @@
-<p>products works!</p>
+<mat-card>
+    <table class="product-table">
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>City</th>
+        </tr>
+        
+        <tr *ngFor="let product of products" [routerLink]="['/product/' + product.id]">
+            <td>Product name...</td>
+        </tr>
+    </table>
+</mat-card>
+
+<button (click)="openDialog()" class="add-product-button" mat-fab color="primary" matTooltip="Add product" matTooltipPosition="above">
+    <mat-icon>add</mat-icon>
+</button>

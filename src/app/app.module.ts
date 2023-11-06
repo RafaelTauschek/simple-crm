@@ -38,6 +38,7 @@ import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { CalenderComponent } from './calender/calender.component';
+import { DialogAddProductComponent } from './dialog-add-product/dialog-add-product.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { CalenderComponent } from './calender/calender.component';
     HomeComponent,
     KanbanComponent,
     CalenderComponent,
+    DialogAddProductComponent,
   ],
   imports: [
     BrowserModule,

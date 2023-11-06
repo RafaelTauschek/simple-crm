@@ -34,6 +34,10 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
 import { AuthService } from './auth.service';
 import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { NgChartsModule } from 'ng2-charts';
+import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
+import { KanbanComponent } from './kanban/kanban.component';
+import { CalenderComponent } from './calender/calender.component';
 
 
 @NgModule({
@@ -49,6 +53,10 @@ import { NgChartsModule } from 'ng2-charts';
     SignInComponent,
     SignUpComponent,
     VertifyEmailComponent,
+    ProductsComponent,
+    HomeComponent,
+    KanbanComponent,
+    CalenderComponent,
   ],
   imports: [
     BrowserModule,

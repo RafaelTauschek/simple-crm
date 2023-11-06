@@ -1,1 +1,15 @@
-<p>kanban works!</p>
+<mat-card>
+    <table class="kanban-table">
+        <tr>
+            <th>To-Do</th>
+            <th>This week</th>
+            <th>In progress</th>
+            <th>Done</th>
+        </tr>
+    </table>
+</mat-card>
+
+<button (click)="openDialog()" class="add-task-button" mat-fab color="primary" matTooltip="Add task" matTooltipPosition="above">
+    <mat-icon>add</mat-icon>
+</button>
+

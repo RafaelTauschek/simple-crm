@@ -39,6 +39,10 @@ import { HomeComponent } from './home/home.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { CalenderComponent } from './calender/calender.component';
 import { DialogAddProductComponent } from './dialog-add-product/dialog-add-product.component';
+import { DialogAddTaskComponent } from './dialog-add-task/dialog-add-task.component';
+import { MatSelectModule } from '@angular/material/select';
+import { CustomerComponent } from './customer/customer.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 
 @NgModule({
@@ -59,6 +63,9 @@ import { DialogAddProductComponent } from './dialog-add-product/dialog-add-produ
     KanbanComponent,
     CalenderComponent,
     DialogAddProductComponent,
+    DialogAddTaskComponent,
+    CustomerComponent,
+    SupplierComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,7 @@ import { DialogAddProductComponent } from './dialog-add-product/dialog-add-produ
     MatProgressBarModule,
     MatMenuModule,
     MatCardModule,
+    MatSelectModule,
     FormsModule,
     AngularFireModule,
     NgChartsModule,
@@ -86,7 +94,7 @@ import { DialogAddProductComponent } from './dialog-add-product/dialog-add-produ
     provideFirestore(() => getFirestore()),
   ],
   providers: [
-    {provide: FIREBASE_OPTIONS, useValue: environment.firebase}
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [AppComponent]
 })

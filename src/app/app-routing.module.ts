@@ -10,6 +10,8 @@ import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { CalenderComponent } from './calender/calender.component';
+import { CustomerComponent } from './customer/customer.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 const routes: Routes = [
   { path: '', component: SignInComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'kanban', component: KanbanComponent },
   { path: 'user', component: UserComponent },
+  { path: 'customer', component: CustomerComponent },
+  { path: 'supplier', component: SupplierComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: 'calender', component: CalenderComponent },
 ];

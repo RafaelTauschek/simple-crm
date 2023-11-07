@@ -43,6 +43,7 @@ import { DialogAddTaskComponent } from './dialog-add-task/dialog-add-task.compon
 import { MatSelectModule } from '@angular/material/select';
 import { CustomerComponent } from './customer/customer.component';
 import { SupplierComponent } from './supplier/supplier.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { SupplierComponent } from './supplier/supplier.component';
     DialogAddTaskComponent,
     CustomerComponent,
     SupplierComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

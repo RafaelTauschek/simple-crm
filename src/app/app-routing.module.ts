@@ -12,6 +12,7 @@ import { KanbanComponent } from './kanban/kanban.component';
 import { CalenderComponent } from './calender/calender.component';
 import { CustomerComponent } from './customer/customer.component';
 import { SupplierComponent } from './supplier/supplier.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', component: SignInComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'supplier', component: SupplierComponent },
   { path: 'user/:id', component: UserDetailComponent },
   { path: 'calender', component: CalenderComponent },
+  { path: 'settings', component: SettingsComponent },
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { updateProfile, getAuth, onAuthStateChanged } from "firebase/auth";
-import { Firestore } from '@angular/fire/firestore';
+
 
 
 @Component({
@@ -22,12 +22,12 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
     this.auth.authState.subscribe((user) => {
       this.user = user;
+      console.log(this.user);
       if (user) {
         console.log('User is signed in');
       } else {
         console.log('User is singed out');
       }
-      console.log(this.user);  
     });
   }
 

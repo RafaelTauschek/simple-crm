@@ -44,6 +44,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { CustomerComponent } from './customer/customer.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { SettingsComponent } from './settings/settings.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 
 @NgModule({
@@ -89,6 +91,7 @@ import { SettingsComponent } from './settings/settings.component';
     MatSelectModule,
     FormsModule,
     AngularFireModule,
+    FullCalendarModule,
     NgChartsModule,
     FirestoreModule,
     AngularFireAuthModule,

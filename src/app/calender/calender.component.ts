@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CalendarOptions } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+
 
 @Component({
   selector: 'app-calender',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./calender.component.scss']
 })
 export class CalenderComponent {
-
+  calendarOptions: CalendarOptions = {
+    plugins: [dayGridPlugin],
+    initialView: 'dayGridMonth',
+    weekends: true,
+    events: [
+      { title: 'Meeting', start: new Date() }
+    ]
+  };
 }
